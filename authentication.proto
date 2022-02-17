@@ -4,9 +4,12 @@ syntax = "proto3";
 
 package authentication;
 
+import "google/protobuf/timestamp.proto";
+
 service Authenticate
 {
     rpc TryLogin(AuthenticateRequest) returns (AuthenticateReply);
+    rpc UserRegistration(RegistrationRequest) returns (RegistrationReply);
 }
 
 message AuthenticateRequest
@@ -19,4 +22,33 @@ message AuthenticateReply
 {
     bool status = 1;
     int32 id = 2;
+}
+
+enum Gender
+{
+    Male = 0;
+    Female = 1;
+    Other = 2;
+}
+
+message BusinessArea
+{
+    int64 id = 1;
+    string name = 2;
+}
+
+message RegistrationRequest
+{
+    string firstname = 1;
+    string lastname = 2;
+    google.protobuf.Timestamp dateofbirth = 3;
+    string email = 4;
+    string password = 5;
+    Gender gender = 6;
+    repeated BusinessArea businessareas = 7;
+}
+
+message RegistrationReply
+{
+    //! TODO
 }
