@@ -45,7 +45,7 @@ message RegistrationRequest
     string email = 4;
     string password = 5;
     Gender gender = 6;
-    repeated BusinessArea businessareas = 7;
+    BusinessArea businessarea = 7;
 }
 
 message RegistrationReply
