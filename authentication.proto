@@ -50,5 +50,6 @@ message RegistrationRequest
 
 message RegistrationReply
 {
-    //! TODO
+    bool status = 1;
+    optional int64 userId = 2;
 }
