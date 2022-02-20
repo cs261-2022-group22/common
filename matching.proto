@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package matching_package;
+
+service MatchingService
+{
+
+}
