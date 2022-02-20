@@ -21,7 +21,7 @@ message AuthenticateRequest
 message AuthenticateReply
 {
     bool status = 1;
-    int32 id = 2;
+    optional int32 id = 2;
 }
 
 message BusinessArea
