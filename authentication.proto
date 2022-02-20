@@ -24,13 +24,6 @@ message AuthenticateReply
     int32 id = 2;
 }
 
-enum Gender
-{
-    Male = 0;
-    Female = 1;
-    Other = 2;
-}
-
 message BusinessArea
 {
     int64 id = 1;
@@ -39,17 +32,15 @@ message BusinessArea
 
 message RegistrationRequest
 {
-    string firstname = 1;
-    string lastname = 2;
-    google.protobuf.Timestamp dateofbirth = 3;
-    string email = 4;
-    string password = 5;
-    Gender gender = 6;
-    BusinessArea businessarea = 7;
+    string name = 1;
+    google.protobuf.Timestamp dateofbirth = 2;
+    string email = 3;
+    string password = 4;
+    BusinessArea businessarea = 6;
 }
 
 message RegistrationReply
 {
     bool status = 1;
-    optional int64 userId = 2;
+    optional int64 accountId = 2;
 }
