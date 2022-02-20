@@ -1,12 +1,10 @@
-/* python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. .\authentication.proto */
-
 syntax = "proto3";
 
-package authentication;
+package account_package;
 
 import "google/protobuf/timestamp.proto";
 
-service Authenticate
+service AccountService
 {
     rpc TryLogin(AuthenticateRequest) returns (AuthenticateReply);
     rpc UserRegistration(RegistrationRequest) returns (RegistrationReply);
@@ -21,7 +19,7 @@ message AuthenticateRequest
 message AuthenticateReply
 {
     bool status = 1;
-    optional int32 id = 2;
+    optional int64 id = 2;
 }
 
 message BusinessArea

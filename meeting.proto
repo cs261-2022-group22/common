@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package meeting_package;
+
+service MeetingService
+{
+
+}
