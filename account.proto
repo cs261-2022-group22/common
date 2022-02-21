@@ -7,7 +7,7 @@ import "google/protobuf/timestamp.proto";
 service AccountService
 {
     rpc TryLogin(AuthenticateRequest) returns (AuthenticateReply);
-    rpc UserRegistration(RegistrationRequest) returns (RegistrationReply);
+    rpc RegisterUser(RegistrationRequest) returns (RegistrationReply);
     rpc AccountProfiles(ProfilesRequest) returns (ProfilesReply);
 }
 
