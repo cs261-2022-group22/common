@@ -8,6 +8,18 @@ service AccountService
 {
     rpc TryLogin(AuthenticateRequest) returns (AuthenticateReply);
     rpc UserRegistration(RegistrationRequest) returns (RegistrationReply);
+    rpc AccountProfiles(ProfilesRequest) returns (ProfilesReply);
+}
+
+message ProfilesRequest
+{
+    int64 userid = 1;
+}
+
+message ProfilesReply
+{
+    bool isMentor = 1;
+    bool isMentee = 2;
 }
 
 message AuthenticateRequest
