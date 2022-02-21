@@ -9,6 +9,18 @@ service AccountService
     rpc TryLogin(AuthenticateRequest) returns (AuthenticateReply);
     rpc RegisterUser(RegistrationRequest) returns (RegistrationReply);
     rpc AccountProfiles(ProfilesRequest) returns (ProfilesReply);
+    rpc GetMentees(GetMenteesRequest) returns (stream Mentee);
+}
+
+message GetMenteesRequest
+{
+    int64 mentorUserId = 1;
+}
+
+message Mentee
+{
+    int64 userid = 1;
+    string name = 2;
 }
 
 message ProfilesRequest
