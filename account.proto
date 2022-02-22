@@ -11,7 +11,7 @@ service AccountService
     rpc ListBusinessAreas(google.protobuf.Empty) returns (ListBusinessAreasReply);
     rpc RegisterUser(RegistrationRequest) returns (RegistrationReply);
     rpc AccountProfiles(ProfilesRequest) returns (ProfilesReply);
-    rpc GetMentees(GetMenteesRequest) returns (stream Mentee);
+    rpc GetMenteesByMentorId(GetMenteesRequest) returns (stream Mentee);
 }
 
 message GetMenteesRequest
