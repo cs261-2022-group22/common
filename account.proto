@@ -8,7 +8,7 @@ import "google/protobuf/empty.proto";
 service AccountService
 {
     rpc TryLogin(AuthenticateRequest) returns (AuthenticateReply);
-    rpc ListBusinessAreas(google.protobuf.Empty) returns (stream ListBusinessAreasReply);
+    rpc ListBusinessAreas(google.protobuf.Empty) returns (ListBusinessAreasReply);
     rpc RegisterUser(RegistrationRequest) returns (RegistrationReply);
     rpc AccountProfiles(ProfilesRequest) returns (ProfilesReply);
 }
@@ -36,10 +36,15 @@ message AuthenticateReply
     optional int64 id = 2;
 }
 
-message ListBusinessAreasReply
+message BusinessArea
 {
     int64 id = 1;
     string name = 2;
+}
+
+message ListBusinessAreasReply
+{
+    repeated BusinessArea businessAreas = 1;
 }
 
 message RegistrationRequest
