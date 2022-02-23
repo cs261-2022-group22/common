@@ -3,10 +3,12 @@ syntax = "proto3";
 package account_package;
 
 import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
 
 service AccountService
 {
     rpc TryLogin(AuthenticateRequest) returns (AuthenticateReply);
+    rpc ListBusinessAreas(google.protobuf.Empty) returns (stream ListBusinessAreasReply);
     rpc RegisterUser(RegistrationRequest) returns (RegistrationReply);
     rpc AccountProfiles(ProfilesRequest) returns (ProfilesReply);
 }
@@ -34,7 +36,7 @@ message AuthenticateReply
     optional int64 id = 2;
 }
 
-message BusinessArea
+message ListBusinessAreasReply
 {
     int64 id = 1;
     string name = 2;
@@ -43,10 +45,10 @@ message BusinessArea
 message RegistrationRequest
 {
     string name = 1;
-    google.protobuf.Timestamp dateofbirth = 2;
+    google.protobuf.Timestamp dateOfBirth = 2;
     string email = 3;
     string password = 4;
-    BusinessArea businessarea = 6;
+    int64 businessAreaId = 6;
 }
 
 message RegistrationReply
