@@ -12,6 +12,24 @@ service AccountService
     rpc RegisterUser(RegistrationRequest) returns (RegistrationReply);
     rpc AccountProfiles(ProfilesRequest) returns (ProfilesReply);
     rpc GetMenteesByMentorId(GetMenteesRequest) returns (GetMenteesReply);
+    rpc GetNotifications(NotificationsRequest) returns (NotificationsReply);
+}
+
+enum Profile 
+{
+    MENTEE = 0;
+    MENTOR = 1;
+}
+
+message NotificationsRequest
+{
+    int64 userid = 1;
+    Profile targetProfile = 2;
+}
+
+message NotificationsReply
+{
+    repeated string desiredNotifications = 1;
 }
 
 message GetMenteesRequest
