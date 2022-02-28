@@ -15,7 +15,7 @@ service AccountService
     rpc GetNotifications(NotificationsRequest) returns (NotificationsReply);
 }
 
-enum Profile 
+enum ProfileType 
 {
     MENTEE = 0;
     MENTOR = 1;
