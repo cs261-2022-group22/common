@@ -24,7 +24,7 @@ enum ProfileType
 message NotificationsRequest
 {
     int64 userid = 1;
-    Profile targetProfile = 2;
+    Profile targetProfileType = 2;
 }
 
 message NotificationsReply
