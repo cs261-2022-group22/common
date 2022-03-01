@@ -4,7 +4,7 @@ package matching_package;
 
 service MatchingService
 {
-    rpc SuggestMatching(SuggestMatchingRequest) returns (SuggestMatchingResponse);
+    rpc GetMatchingMentor(SuggestMatchingRequest) returns (SuggestMatchingResponse);
 }
 
 message SuggestMatchingRequest
