@@ -4,5 +4,16 @@ package matching_package;
 
 service MatchingService
 {
+    rpc GetMatchingMentor(GetMatchingMentorRequest) returns (GetMatchingMentorReply);
+}
 
+message GetMatchingMentorRequest
+{
+    int64 menteeId = 1;
+}
+
+message GetMatchingMentorReply
+{
+    int64 mentorId = 1;
+    string mentorName = 2;
 }
