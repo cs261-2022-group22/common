@@ -2,7 +2,45 @@ syntax = "proto3";
 
 package meeting_package;
 
+import "google/protobuf/timestamp.proto";
+
 service MeetingService
 {
+    rpc ListAppointments(ListAppointmentsRequest) returns (ListAppointmentsReply);
+}
 
+message ListAppointmentsRequest
+{
+    int64 userid = 1;
+}
+
+message ListAppointmentsReply
+{
+    // Max length 5, assumed sorted?
+    repeated Appointment appointments = 1;
+}
+
+enum AppointmentType
+{
+    MEETING = 0;
+    WORKSHOP = 1;
+}
+
+message Appointment
+{
+    // If it is a meeting or workshop
+    AppointmentType type = 1;
+    // Name of the other person if a meeting
+    string name = 2;
+
+    google.protobuf.Timestamp start_time = 3;
+
+    // in minutes
+    int64 duration_minutes = 4;
+
+    // The skill the workshop is on if a workshop
+    string skill = 5;
+
+    // The link to join
+    string link = 6;
 }
