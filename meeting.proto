@@ -6,7 +6,7 @@ import "google/protobuf/timestamp.proto";
 
 service MeetingService
 {
-    rpc ListAppointments(ListAppointmentsRequest) returns (ListAppointmentsReply);
+    rpc List5AppointmentsByUserID(ListAppointmentsRequest) returns (ListAppointmentsReply);
 }
 
 message ListAppointmentsRequest
