@@ -1,9 +1,10 @@
 syntax = "proto3";
 
-package meeting_package;
+package Meeting;
+
+import "google/protobuf/timestamp.proto";
 
 import "common_types.proto";
-import "google/protobuf/timestamp.proto";
 
 service MeetingService
 {
@@ -13,7 +14,7 @@ service MeetingService
 message ListAppointmentsRequest
 {
     int64 userid = 1;
-    common_types.ProfileType profileType = 2;
+    common.ProfileType profileType = 2;
 }
 
 message ListAppointmentsReply
