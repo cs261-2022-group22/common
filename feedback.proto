@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package feedback_service;
+package feedback_package;
 
 service FeedbackService
 {
