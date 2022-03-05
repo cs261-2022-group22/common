@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package account_package;
+package Account;
 
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/empty.proto";
@@ -20,7 +20,7 @@ service AccountService
 message NotificationsRequest
 {
     int64 userid = 1;
-    common_types.ProfileType targetProfileType = 2;
+    common.ProfileType targetProfileType = 2;
 }
 
 message NotificationsReply

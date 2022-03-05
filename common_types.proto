@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package common_types;
+package common;
 
 enum ProfileType
 {
