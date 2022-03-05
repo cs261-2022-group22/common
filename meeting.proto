@@ -1,20 +1,24 @@
 syntax = "proto3";
 
-package Meeting;
+package meeting_package;
 
 import "google/protobuf/timestamp.proto";
-
-import "common_types.proto";
 
 service MeetingService
 {
     rpc List5AppointmentsByUserID(ListAppointmentsRequest) returns (ListAppointmentsReply);
 }
 
+enum ProfileType
+{
+    MENTEE = 0;
+    MENTOR = 1;
+}
+
 message ListAppointmentsRequest
 {
     int64 userid = 1;
-    common.ProfileType profileType = 2;
+    ProfileType profileType = 2;
 }
 
 message ListAppointmentsReply

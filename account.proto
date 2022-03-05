@@ -1,11 +1,9 @@
 syntax = "proto3";
 
-package Account;
+package account_package;
 
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/empty.proto";
-
-import "common_types.proto";
 
 service AccountService
 {
@@ -17,10 +15,16 @@ service AccountService
     rpc GetNotifications(NotificationsRequest) returns (NotificationsReply);
 }
 
+enum ProfileType
+{
+    MENTEE = 0;
+    MENTOR = 1;
+}
+
 message NotificationsRequest
 {
     int64 userid = 1;
-    common.ProfileType targetProfileType = 2;
+    ProfileType targetProfileType = 2;
 }
 
 message NotificationsReply
