@@ -5,6 +5,8 @@ package account_package;
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/empty.proto";
 
+import "common_types.proto";
+
 service AccountService
 {
     rpc TryLogin(AuthenticateRequest) returns (AuthenticateReply);
@@ -15,16 +17,10 @@ service AccountService
     rpc GetNotifications(NotificationsRequest) returns (NotificationsReply);
 }
 
-enum ProfileType 
-{
-    MENTEE = 0;
-    MENTOR = 1;
-}
-
 message NotificationsRequest
 {
     int64 userid = 1;
-    ProfileType targetProfileType = 2;
+    common_types.ProfileType targetProfileType = 2;
 }
 
 message NotificationsReply
