@@ -48,6 +48,7 @@ message CreatePlansOfActionsRequest
 message CreatePlansOfActionsReply
 {
     bool successful = 1;
+    optional PlansOfAction plansOfAction = 2;
 }
 
 enum ProfileType
