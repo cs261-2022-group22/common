@@ -7,6 +7,47 @@ import "google/protobuf/timestamp.proto";
 service MeetingService
 {
     rpc List5AppointmentsByUserID(ListAppointmentsRequest) returns (ListAppointmentsReply);
+
+    rpc ListPlansOfActions(ListPlansOfActionsRequest) returns (ListPlansOfActionsReply);
+    rpc TogglePlansOfActionCompletion(TogglePlansOfActionCompletionRequest) returns (TogglePlansOfActionCompletionReply);
+    rpc CreatePlansOfActions(CreatePlansOfActionsRequest) returns (CreatePlansOfActionsReply);
+}
+
+message ListPlansOfActionsRequest
+{
+    int64 userid = 1;
+}
+
+message PlansOfAction
+{
+    int64 id = 1;
+    string content = 2;
+}
+
+message ListPlansOfActionsReply
+{
+    repeated PlansOfAction plansOfActions = 1;
+}
+
+message TogglePlansOfActionCompletionRequest
+{
+    int64 userid = 1;
+    int64 planId = 2;
+}
+
+message TogglePlansOfActionCompletionReply
+{
+    bool successful = 1;
+}
+
+message CreatePlansOfActionsRequest
+{
+    string plansOfAction = 1;
+}
+
+message CreatePlansOfActionsReply
+{
+    bool successful = 1;
 }
 
 enum ProfileType
