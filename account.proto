@@ -13,6 +13,18 @@ service AccountService
     rpc AccountProfiles(ProfilesRequest) returns (ProfilesReply);
     rpc GetMenteesByMentorId(GetMenteesRequest) returns (GetMenteesReply);
     rpc GetNotifications(NotificationsRequest) returns (NotificationsReply);
+    rpc RegisterMentee(MenteeSignupRequest) returns (MenteeSignupReply);
+}
+
+message MenteeSignupRequest
+{
+    int64 userid = 1;
+    repeated string desiredSkills = 2;
+}
+
+message MenteeSignupReply 
+{
+    bool status = 1;
 }
 
 enum ProfileType
