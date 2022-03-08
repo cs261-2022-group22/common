@@ -41,7 +41,7 @@ message TogglePlansOfActionCompletionReply
 
 message CreatePlansOfActionsRequest
 {
-    int64 menteeId = 1;
+    int64 menteeUserId = 1;
     string plansOfAction = 2;
 }
 
