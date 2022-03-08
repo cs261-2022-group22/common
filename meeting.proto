@@ -31,8 +31,7 @@ message ListPlansOfActionsReply
 
 message TogglePlansOfActionCompletionRequest
 {
-    int64 userid = 1;
-    int64 planId = 2;
+    int64 planid = 1;
 }
 
 message TogglePlansOfActionCompletionReply
@@ -42,7 +41,8 @@ message TogglePlansOfActionCompletionReply
 
 message CreatePlansOfActionsRequest
 {
-    string plansOfAction = 1;
+    int64 menteeId = 1;
+    string plansOfAction = 2;
 }
 
 message CreatePlansOfActionsReply
