@@ -14,6 +14,21 @@ service AccountService
     rpc GetMenteesByMentorId(GetMenteesRequest) returns (GetMenteesReply);
     rpc GetNotifications(NotificationsRequest) returns (NotificationsReply);
     rpc RegisterMentee(MenteeSignupRequest) returns (MenteeSignupReply);
+    rpc UpdateProfileDetails(UpdateProfileDetailsRequest) returns (UpdateProfileDetailsResponse);
+}
+
+message UpdateProfileDetailsRequest
+{
+    int64 userid = 1;
+    ProfileType profileType = 2;
+    optional string newEmail = 3;
+    optional int64 newBSId = 4;
+    repeated int64 skills = 5;
+}
+
+message UpdateProfileDetailsResponse
+{
+    bool success = 1;
 }
 
 message MenteeSignupRequest
