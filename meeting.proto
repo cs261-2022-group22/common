@@ -11,6 +11,7 @@ service MeetingService
     rpc ListPlansOfActions(ListPlansOfActionsRequest) returns (ListPlansOfActionsReply);
     rpc TogglePlansOfActionCompletion(TogglePlansOfActionCompletionRequest) returns (TogglePlansOfActionCompletionReply);
     rpc CreatePlansOfActions(CreatePlansOfActionsRequest) returns (CreatePlansOfActionsReply);
+    rpc ScheduleNewMeeting(ScheduleNewMeetingRequest) returns (ScheduleNewMeetingReply);
 }
 
 message ListPlansOfActionsRequest
@@ -92,4 +93,17 @@ message Appointment
 
     // The link to join
     string link = 6;
+}
+
+message ScheduleNewMeetingRequest
+{
+    int64 menteeUserId = 1;
+    google.protobuf.Timestamp start = 2;
+    int32 duration = 3;
+    string link = 4;
+}
+
+message ScheduleNewMeetingReply
+{
+    bool success = 1;
 }
