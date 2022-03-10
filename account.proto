@@ -14,7 +14,8 @@ service AccountService
     rpc AccountProfiles(ProfilesRequest) returns (ProfilesReply);
     rpc GetMenteesByMentorId(GetMenteesRequest) returns (GetMenteesReply);
     rpc GetNotifications(NotificationsRequest) returns (NotificationsReply);
-    rpc RegisterMentee(MenteeSignupRequest) returns (MenteeSignupReply);
+    rpc RegisterMentee(ProfileSignupRequest) returns (ProfileSignupReply);
+    rpc RegisterMentor(ProfileSignupRequest) returns (ProfileSignupReply);
     rpc UpdateProfileDetails(UpdateProfileDetailsRequest) returns (UpdateProfileDetailsResponse);
 }
 
@@ -32,13 +33,13 @@ message UpdateProfileDetailsResponse
     bool success = 1;
 }
 
-message MenteeSignupRequest
+message ProfileSignupRequest
 {
     int64 userid = 1;
     repeated string desiredSkills = 2;
 }
 
-message MenteeSignupReply 
+message ProfileSignupReply 
 {
     bool status = 1;
 }
