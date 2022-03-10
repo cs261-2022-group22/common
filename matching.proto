@@ -4,8 +4,8 @@ package matching_package;
 
 service MatchingService
 {
-    rpc TryMatch(MenteeToMentorMatchingRequest) returns (MenteeToMentorMatchingRequest);
-    rpc GetMatchingMentor(MenteeToMentorMatchingRequest) returns (MenteeToMentorMatchingRequest);
+    rpc TryMatch(MenteeToMentorMatchingRequest) returns (MenteeToMentorMatchingReply);
+    rpc GetMatchingMentor(MenteeToMentorMatchingRequest) returns (MenteeToMentorMatchingReply);
 }
 
 message MenteeToMentorMatchingRequest
