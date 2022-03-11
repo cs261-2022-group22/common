@@ -4,4 +4,17 @@ package feedback_package;
 
 service FeedbackService
 {
+    rpc AddFeedbackOnMentor(AddFeedbackRequest) returns (AddFeedbackReply);
+}
+
+message AddFeedbackRequest 
+{
+    int64 mentorUserId = 1;
+    int64 menteeUserId = 2;
+    float rating = 3;
+}
+
+message AddFeedbackReply 
+{
+    bool status = 1;
 }
