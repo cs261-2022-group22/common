@@ -12,6 +12,20 @@ service MeetingService
     rpc TogglePlansOfActionCompletion(TogglePlansOfActionCompletionRequest) returns (TogglePlansOfActionCompletionReply);
     rpc CreatePlansOfActions(CreatePlansOfActionsRequest) returns (CreatePlansOfActionsReply);
     rpc ScheduleNewMeeting(ScheduleNewMeetingRequest) returns (ScheduleNewMeetingReply);
+    rpc ScheduleNewWorkshop(ScheduleNewWorkshopRequest) returns (ScheduleNewWorkshopReply);
+}
+
+message ScheduleNewWorkshopRequest
+{
+    google.protobuf.Timestamp start = 1;
+    int64 duration = 2;
+    string link = 3;
+    string skill = 4;
+}
+
+message ScheduleNewWorkshopReply
+{
+    bool status = 1;
 }
 
 message ListPlansOfActionsRequest
