@@ -6,6 +6,12 @@ service FeedbackService
 {
     rpc AddFeedbackOnMentor(AddFeedbackRequest) returns (AddFeedbackReply);
     rpc AddFeedbackOnMentee(AddFeedbackRequest) returns (AddFeedbackReply);
+    rpc AddDevFeedback(AddDevFeedbackRequest) returns (AddFeedbackReply);
+}
+
+message AddDevFeedbackRequest 
+{
+    string content = 1;
 }
 
 message AddFeedbackRequest 
