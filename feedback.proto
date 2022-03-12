@@ -5,6 +5,7 @@ package feedback_package;
 service FeedbackService
 {
     rpc AddFeedbackOnMentor(AddFeedbackRequest) returns (AddFeedbackReply);
+    rpc AddFeedbackOnMentee(AddFeedbackRequest) returns (AddFeedbackReply);
 }
 
 message AddFeedbackRequest 
