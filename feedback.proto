@@ -7,6 +7,14 @@ service FeedbackService
     rpc AddFeedbackOnMentor(AddFeedbackRequest) returns (AddFeedbackReply);
     rpc AddFeedbackOnMentee(AddFeedbackRequest) returns (AddFeedbackReply);
     rpc AddDevFeedback(AddDevFeedbackRequest) returns (AddFeedbackReply);
+    rpc AddProgFeedback(AddProgFeedbackRequest) returns (AddFeedbackReply);
+}
+
+message AddProgFeedbackRequest
+{
+    int64 mentorUserId = 1;
+    int64 menteeUserId = 2;
+    string content = 3;
 }
 
 message AddDevFeedbackRequest 
