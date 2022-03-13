@@ -6,6 +6,7 @@ service MatchingService
 {
     rpc TryMatch(MenteeToMentorMatchingRequest) returns (MenteeToMentorMatchingReply);
     rpc GetMatchingMentor(MenteeToMentorMatchingRequest) returns (MenteeToMentorMatchingReply);
+    rpc GetMenteesByMentorId(GetMenteesRequest) returns (GetMenteesReply);
 }
 
 message MenteeToMentorMatchingRequest
@@ -18,4 +19,20 @@ message MenteeToMentorMatchingReply
     bool status = 1;
     int64 mentorUserId = 2;
     string mentorName = 3;
+}
+
+message GetMenteesRequest
+{
+    int64 mentorUserId = 1;
+}
+
+message Mentee
+{
+    int64 userid = 1;
+    string name = 2;
+}
+
+message GetMenteesReply
+{
+    repeated Mentee mentees = 1;
 }

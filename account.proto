@@ -12,7 +12,6 @@ service AccountService
     rpc ListSkills(google.protobuf.Empty) returns (ListSkillsReply);
     rpc RegisterUser(RegistrationRequest) returns (RegistrationReply);
     rpc AccountProfiles(ProfilesRequest) returns (ProfilesReply);
-    rpc GetMenteesByMentorId(GetMenteesRequest) returns (GetMenteesReply);
     rpc GetNotifications(NotificationsRequest) returns (NotificationsReply);
     rpc RegisterMentee(ProfileSignupRequest) returns (ProfileSignupReply);
     rpc RegisterMentor(ProfileSignupRequest) returns (ProfileSignupReply);
@@ -39,7 +38,7 @@ message ProfileSignupRequest
     repeated string desiredSkills = 2;
 }
 
-message ProfileSignupReply 
+message ProfileSignupReply
 {
     bool status = 1;
 }
@@ -59,22 +58,6 @@ message NotificationsRequest
 message NotificationsReply
 {
     repeated string desiredNotifications = 1;
-}
-
-message GetMenteesRequest
-{
-    int64 mentorUserId = 1;
-}
-
-message Mentee
-{
-    int64 userid = 1;
-    string name = 2;
-}
-
-message GetMenteesReply
-{
-    repeated Mentee mentees = 1;
 }
 
 message ProfilesRequest
